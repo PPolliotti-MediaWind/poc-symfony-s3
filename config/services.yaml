@@ -27,7 +27,7 @@ services:
         arguments:
             - version: 'latest'
               region: 'eu-east-1'
-              endpoint: '192.168.1.42:9000'
+              endpoint: '%env(string:AWS_S3_ENDPOINT)%'
               credentials:
-                key: 'access1234'
-                secret: 'secret1234'
+                key: '%env(string:AWS_S3_KEY)%'
+                secret: '%env(string:AWS_S3_SECRET)%'

@@ -20,7 +20,7 @@ class PictureCrudController extends AbstractCrudController
         return [
             TextField::new("name"),
             TextField::new("pictureFile", "Upload")->setFormType(VichImageType::class)->onlyOnForms(),
-            ImageField::new("pictureName", "File")->setBasePath($_SERVER['AWS_S3_ENDPOINT']. "/pictures/")->hideOnForm(),
+            ImageField::new("pictureName", "File")->setBasePath($_SERVER['AWS_S3_BASE_PATH'])->hideOnForm(),
         ];
     }
 }
